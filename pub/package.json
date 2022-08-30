@@ -1,0 +1,30 @@
+{
+  "author": "Corno",
+  "bin": {},
+  "dependencies": {
+    "api-astn-handlers": "^0.0.0",
+    "api-astn-typedhandlers": "^0.0.0",
+    "pareto-core-lib": "^0.4.0",
+    "pareto-core-tostring": "^0.6.0"
+  },
+  "files": [
+    "dist",
+    "data"
+  ],
+  "keywords": [],
+  "main": "./dist/index.js",
+  "bugs": {
+    "url": "https://github.com/corno/astn/issues"
+  },
+  "description": "unmarshaller for ASTN",
+  "homepage": "https://github.com/corno/astn#readme",
+  "license": "ISC",
+  "name": "astn-unmarshall-lib",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/corno/astn-unmarshall-lib.git"
+  },
+  "types": "dist/index.d.ts",
+  "version": "0.21.0",
+  "content-fingerprint": "6a7f7696fabf6b03b9661376d1416a54ac146c81"
+}

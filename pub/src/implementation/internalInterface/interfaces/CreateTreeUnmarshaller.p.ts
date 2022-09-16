@@ -5,12 +5,12 @@
 // import { InternalSchemaSpecification } from "../types/InternalSchemaSpecification";
 // import { UnmarshallError } from "astn-unmarshall-api";
 
-// export type CreateTreeUnmarshaller2<Annotation> = ($: {
+// export type CreateTreeUnmarshaller2<PAnnotation> = ($: {
 //     specification: InternalSchemaSpecification
-//     schemaAndSideEffects: typedTokenize.ISchemaAndSideEffects<Annotation>
+//     schemaAndSideEffects: typedTokenize.ISchemaAndSideEffects<PAnnotation>
 //     onError: (
 //         message: UnmarshallError,
 //         annotation: Annotation,
 //         severity: DiagnosticSeverity
 //     ) => void
-// }) => grammar.ITreeHandler<Annotation>
+// }) => grammar.ITreeHandler<PAnnotation>

@@ -4,11 +4,11 @@ import { defaultInitializeValue } from "./defaultInitializeValue"
 
 import * as inf from "../interface"
 
-export function createUnmarshaller<Annotation>(
+export function createUnmarshaller<PAnnotation>(
     $: inf.CreateUnmarshaller_Data,
-    $i: inf.CreateUnmarshaller_Interfaces<Annotation>,
-    $d: inf.CreateUnmarshaller_Dependencies<Annotation>,
-): IRequiredValueHandler<Annotation> {
+    $i: inf.CreateUnmarshaller_Interfaces<PAnnotation>,
+    $d: inf.CreateUnmarshaller_Dependencies<PAnnotation>,
+): IRequiredValueHandler<PAnnotation> {
     return {
         exists: createValueUnmarshaller(
             $.schema["root type"].get().value,

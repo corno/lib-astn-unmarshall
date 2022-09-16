@@ -1,6 +1,4 @@
-interface Array<T> {
-    [n: number]: T
-}
+interface Array<T> { }
 interface Boolean { }
 interface CallableFunction { }
 interface Function { }

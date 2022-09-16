@@ -1,5 +1,5 @@
 export type RetrievalError =
-    | ["not found", {}]
+    | ["not found", null]
     | [
         "other",
         {

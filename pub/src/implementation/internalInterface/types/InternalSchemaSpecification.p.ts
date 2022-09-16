@@ -1,5 +1,5 @@
 
 export type InternalSchemaSpecification =
-| ["embedded", {}]
+| ["embedded", null]
 | ["reference", { name: string }]
-| ["none", {}]
+| ["none", null]

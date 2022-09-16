@@ -1,12 +1,12 @@
 import * as pl from "pareto-core-lib"
 import * as tth from "astn-typedhandlers-api"
 
-//export type OnError<Annotation> = (message: inf.UnmarshallErrorType, annotation: Annotation, severity: inf.DiagnosticSeverity) => void
+//export type OnError<PAnnotation> = (message: inf.UnmarshallErrorType, annotation: Annotation, severity: inf.DiagnosticSeverity) => void
 
-export function defaultInitializeValue<Annotation>(
+export function defaultInitializeValue<PAnnotation>(
     definition: tth.ValueDefinition,
-    handler: tth.ITypedValueHandler<Annotation>,
-    //onError: OnError<Annotation>,
+    handler: tth.ITypedValueHandler<PAnnotation>,
+    //onError: OnError<PAnnotation>,
 ): void {
     switch (definition.type[0]) {
         case "dictionary": {
@@ -76,7 +76,7 @@ export function defaultInitializeValue<Annotation>(
             const $e = definition.type[1]
 
             const groupHandler = handler.onGroup({
-                type: ["omitted", {}],
+                type: ["omitted", null],
                 definition: $e,
             })
             $e.properties.forEach(() => false, (propDef, key) => {

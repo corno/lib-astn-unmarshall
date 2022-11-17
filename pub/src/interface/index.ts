@@ -1,8 +1,5 @@
-export * from "./creators"
+export * from "./functions/functions.p"
 
-export * from "./types/UnmarshallError"
-export * from "./interfaces/DummyHandlers"
+export * from "./types/UnmarshallError.p"
+export * from "./types/DiagnosticSeverity.p"
 
-export * from "./types/DiagnosticSeverity"
-
-export * from "./types/UnmarshallError"

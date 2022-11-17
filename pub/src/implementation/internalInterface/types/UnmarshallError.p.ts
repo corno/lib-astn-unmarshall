@@ -37,6 +37,6 @@ export type UnmarshallErrorType =
 
 export type UnmarshallError<PAnnotation> = {
     type: UnmarshallErrorType,
-    annotation: Annotation,
+    annotation: PAnnotation,
     severity: DiagnosticSeverity,
 }

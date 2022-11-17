@@ -1,7 +1,7 @@
 import * as pl from "pareto-core-lib"
-import * as tth from "astn-typedhandlers-api"
+import * as tth from "api-astn-typedhandlers"
 
-//export type OnError<PAnnotation> = (message: inf.UnmarshallErrorType, annotation: Annotation, severity: inf.DiagnosticSeverity) => void
+//export type OnError<PAnnotation> = (message: inf.UnmarshallErrorType, annotation: PAnnotation, severity: inf.DiagnosticSeverity) => void
 
 export function defaultInitializeValue<PAnnotation>(
     definition: tth.ValueDefinition,

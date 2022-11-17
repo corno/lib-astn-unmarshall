@@ -2,11 +2,10 @@
   "author": "Corno",
   "bin": {},
   "dependencies": {
-    "api-astn-handlers": "^0.0.0",
-    "api-astn-typedhandlers": "^0.0.0",
-    "pareto-core-lib": "^0.4.0",
-    "pareto-core-tostring": "^0.6.0"
-  },
+    "api-astn-handlers": "^0.1.0",
+    "api-astn-typedhandlers": "^0.1.0",
+    "pareto-core-lib": "^0.12.0",
+      },
   "files": [
     "dist",
     "data"

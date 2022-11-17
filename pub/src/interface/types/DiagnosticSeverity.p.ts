@@ -1,3 +1,3 @@
-export type DiagnosticSeverity =
+export type TDiagnosticSeverity =
     | ["warning", null]
     | ["error", null]

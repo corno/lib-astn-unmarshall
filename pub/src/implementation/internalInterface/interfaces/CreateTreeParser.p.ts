@@ -5,7 +5,7 @@
 // //     handler: ITreeHandler<PAnnotation> | null
 // //     onError: ($: {
 // //         error: ParsingError
-// //         annotation: Annotation
+// //         annotation: PAnnotation
 // //     }) => void
 // // }
 

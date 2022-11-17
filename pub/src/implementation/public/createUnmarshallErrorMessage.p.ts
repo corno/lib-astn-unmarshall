@@ -3,13 +3,12 @@
 */
 import * as pt from "pareto-core-types"
 import * as pl from "pareto-core-lib"
-import * as ps from "pareto-core-tostring"
 
-import * as inf from "../interface"
+import * as inf from "../../interface"
 
 
 export function createUnmarshallErrorMessage(
-    error: inf.UnmarshallError
+    error: inf.TUnmarshallError
 ): string {
     switch (error[0]) {
         case "missing elements":

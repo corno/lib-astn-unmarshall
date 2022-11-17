@@ -10,7 +10,7 @@
 //     schemaAndSideEffects: typedTokenize.ISchemaAndSideEffects<PAnnotation>
 //     onError: (
 //         message: UnmarshallError,
-//         annotation: Annotation,
+//         annotation: PAnnotation,
 //         severity: DiagnosticSeverity
 //     ) => void
 // }) => grammar.ITreeHandler<PAnnotation>

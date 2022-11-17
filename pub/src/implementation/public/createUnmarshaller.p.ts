@@ -1,21 +1,18 @@
-import { IRequiredValueHandler } from "astn-handlers-api"
-import { createValueUnmarshaller } from "./createValueUnmarshaller"
-import { defaultInitializeValue } from "./defaultInitializeValue"
+import { IRequiredValueHandler } from "api-astn-handlers"
+import { createValueUnmarshaller } from "../private/createValueUnmarshaller.p"
+import { defaultInitializeValue } from "../private/defaultInitializeValue.p"
 
-import * as inf from "../interface"
+import * as api from "../../interface"
 
-export function createUnmarshaller<PAnnotation>(
-    $: inf.CreateUnmarshaller_Data,
-    $i: inf.CreateUnmarshaller_Interfaces<PAnnotation>,
-    $d: inf.CreateUnmarshaller_Dependencies<PAnnotation>,
-): IRequiredValueHandler<PAnnotation> {
+export const createUnmarshaller: api.CreateUnmarshaller = ($, $i
+) => {
     return {
         exists: createValueUnmarshaller(
             $.schema["root type"].get().value,
             $i.handler,
             (type, annotation, severity) => {
                 $i.onError({
-                    type: type,
+                    error: type,
                     annotation: annotation,
                     severity: severity
                 })

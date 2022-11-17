@@ -5,19 +5,7 @@ import { ITypedValueHandler, Schema } from "astn-typedhandlers-api"
 
 import * as inf from "../interface"
 
-export type MixidIn<PAnnotation> = {
-    pushGroup: (
-        definition: tth.GroupDefinition,
-        groupContainerHandler: tth.ITypedValueHandler<PAnnotation>
-    ) => h.IValueHandler<PAnnotation>
-    pushTaggedUnion: (
-        definition: tth.OptionDefinition,
-        taggedUnionHandler: tth.ITypedTaggedUnionHandler<PAnnotation>,
-        optionHandler: tth.ITypedValueHandler<PAnnotation>,
-    ) => void
-}
-
-export type OnError<PAnnotation> = ($: inf.AnnotatedUnmarshallError<PAnnotation>) => void
+export type OnError<PAnnotation> = ($: inf.TAnnotatedUnmarshallError<PAnnotation>) => void
 
 
 export type CreateValueUnmarshaller =<PAnnotation>(
@@ -36,7 +24,7 @@ export type CreateUnmarshaller = <PAnnotation>(
     },
     $i: {
         handler: ITypedValueHandler<PAnnotation>
-        onError: ($: inf.AnnotatedUnmarshallError<PAnnotation>) => void
+        onError: ($: inf.TAnnotatedUnmarshallError<PAnnotation>) => void
         dummyHandlers: inf.DummyHandlers<PAnnotation>
     }
 ) => h.IRequiredValueHandler<PAnnotation>

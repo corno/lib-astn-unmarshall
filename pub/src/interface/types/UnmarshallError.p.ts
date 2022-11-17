@@ -1,8 +1,8 @@
-import { DiagnosticSeverity } from "./DiagnosticSeverity"
+import { TDiagnosticSeverity } from "./DiagnosticSeverity.p"
 
 import * as pt from "pareto-core-types"
 
-export type UnmarshallError =
+export type TUnmarshallError =
     | ["array is not a list", null]
     | ["array is not a shorthand group", null]
     | ["duplicate key", null]
@@ -14,7 +14,7 @@ export type UnmarshallError =
     | ["expected a quoted string", null]
     | ["expected a tagged union", null]
     | ["missing elements", {
-        elements: pt.Dictionary<null>
+        readonly "elements": pt.Dictionary<null>
     }]
     | ["missing option", null]
     | ["entry key does not have quotes", null]
@@ -35,8 +35,8 @@ export type UnmarshallError =
     | ["value should not have apostrophes", null]
     | ["value should not have quotes", null];
 
-export type AnnotatedUnmarshallError<PAnnotation> = {
-    type: UnmarshallError,
-    annotation: Annotation,
-    severity: DiagnosticSeverity,
+export type TAnnotatedUnmarshallError<PAnnotation> = {
+    readonly "error": TUnmarshallError,
+    readonly "annotation": PAnnotation,
+    readonly "severity": TDiagnosticSeverity,
 }

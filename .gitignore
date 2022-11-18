@@ -3,9 +3,8 @@
 /pub/dist/
 /pub/node_modules/
 /pareto/node_modules/
-/pareto/package.json
-/pareto/package-lock.json
 /pareto/scripts/
 /test/dist/
 /test/node_modules/
 /tmp
+/package.json

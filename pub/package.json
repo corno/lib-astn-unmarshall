@@ -4,8 +4,8 @@
   "dependencies": {
     "api-astn-handlers": "^0.1.0",
     "api-astn-typedhandlers": "^0.1.0",
-    "pareto-core-lib": "^0.12.0",
-      },
+    "pareto-core-lib": "^0.12.0"
+  },
   "files": [
     "dist",
     "data"
@@ -25,5 +25,6 @@
   },
   "types": "dist/index.d.ts",
   "version": "0.21.0",
-  "content-fingerprint": "6a7f7696fabf6b03b9661376d1416a54ac146c81"
+  "interface-fingerprint": "715ce3eb60d40537ecb632edd28d987884a7c44f",
+  "content-fingerprint": "cd42a8bf3f50d970081f9722fa2db03963da86aa"
 }

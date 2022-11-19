@@ -76,7 +76,7 @@ export function defaultInitializeValue<PAnnotation>(
             const $e = definition.type[1]
 
             const groupHandler = handler.onGroup({
-                type: ["omitted", null],
+                type: ["omitted", {}],
                 definition: $e,
             })
             $e.properties.forEach(() => false, (propDef, key) => {

@@ -1,6 +1,6 @@
 
-import * as pt from "pareto-core-types"
-// import * as pl from "pareto-core-lib"
+import * as pt from 'pareto-core-types'
+// import * as pl from 'pareto-core-lib'
 
 // import * as inf from "../../interface"
 

@@ -1,6 +1,6 @@
 import { TDiagnosticSeverity } from "./DiagnosticSeverity.p"
 
-import * as pt from "pareto-core-types"
+import * as pt from 'pareto-core-types'
 
 export type TUnmarshallError =
     | ["array is not a list", null]

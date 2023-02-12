@@ -1,4 +1,4 @@
-import * as pl from "pareto-core-lib"
+import * as pl from 'pareto-core-lib'
 import * as tth from "api-astn-typedhandlers"
 
 //export type OnError<PAnnotation> = (message: inf.UnmarshallErrorType, annotation: PAnnotation, severity: inf.DiagnosticSeverity) => void

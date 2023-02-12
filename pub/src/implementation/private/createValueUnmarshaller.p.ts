@@ -1,7 +1,7 @@
 // /* eslint
 //     "@typescript-eslint/no-shadow": "off"
 //  */
-// import * as pl from "pareto-core-lib"
+// import * as pl from 'pareto-core-lib'
 
 // import * as tth from "api-astn-typedhandlers"
 // import * as h from "api-astn-handlers"

@@ -1,5 +1,5 @@
-import * as h from "api-astn-handlers"
-import * as th from "api-astn-typedhandlers"
+import * as h from "glo-astn-handlers"
+import * as th from "glo-astn-typedhandlers"
 
 import { TAnnotatedUnmarshallError } from "../types/UnmarshallError.p"
 

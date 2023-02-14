@@ -12,6 +12,9 @@ export const $: mproject.T.Project = {
     'license': "ISC",
 
     'pubdependencies': d({
+        "res-pareto-tostring": {},
+        "glo-astn-handlers": {},
+        //"glo-astn-typedhandlers": {},
     }),
     'type': ['library', {
         'main': {

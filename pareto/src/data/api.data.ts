@@ -24,8 +24,15 @@ export const $: mmoduleDefinition.T.ModuleDefinition = {
     'api': {
         'imports': d({
             //"common": "glo-pareto-common",
+            "tostring": "res-pareto-tostring",
         }),
         'algorithms': d({
+            "createErrorMessage": algorithm(definitionReference("CreateUnmarshallErrorMessage"), constructor(null, {
+                "getArrayAsString": definitionReference("tostring", {}, "GetArrayAsString"),
+                "getKeysAsString": definitionReference("tostring", {}, "GetKeysAsString"),
+                "getNumberOfKeysAsString": definitionReference("tostring", {}, "GetNumberOfKeysAsString"),
+                "getLengthAsString": definitionReference("tostring", {}, "GetLengthAsString"),
+            }))
         })
     },
 }

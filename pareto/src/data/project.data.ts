@@ -11,7 +11,7 @@ export const $: mproject.T.Project = {
     'description': "unmarshall an ASTN Document (string) into a *typed* dataset",
     'license': "ISC",
 
-    'pubdependencies': d({
+    'dependencies': d({
         "res-pareto-tostring": {},
         "glo-astn-handlers": {},
         //"glo-astn-typedhandlers": {},
@@ -26,6 +26,13 @@ export const $: mproject.T.Project = {
         'test': {
             'dependencies': d({
             }),
+            'glossary': {
+                'functions': d({}),
+                'imports': d({}),
+                'parameters': d({}),
+                'types': d({}),
+                'interfaces': d({}),
+            },
         }
     }],
 }

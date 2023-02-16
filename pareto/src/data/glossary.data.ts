@@ -7,7 +7,7 @@ import {
     reference,
     boolean,
     typeReference,
-    dictionary, group, member, taggedUnion, types, func, data, interfaceReference, inf, method, type, glossaryParameter
+    dictionary, group, member, taggedUnion, types, func, data, interfaceReference, inf, method, type, glossaryParameter, parametrizedInterfaceReference
 } from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands.p"
 
 import * as mglossary from "lib-pareto-typescript-project/dist/submodules/glossary"
@@ -17,11 +17,15 @@ const d = pr.wrapRawDictionary
 export const $: mglossary.T.Glossary<string> = {
     'imports': d({
         "common": "glo-pareto-common",
+        "h": "glo-astn-handlers",
+        "th": "glo-astn-typedhandlers",
+        "schema": "glo-astn-schema",
     }),
     'parameters': d({
         "Annotation": {},
     }),
     'types': d({
+        "Annotation": type(glossaryParameter("Annotation")),
         "DiagnosticSeverity": type(taggedUnion({
             "error": group({}),
             "warning": group({}),
@@ -72,12 +76,17 @@ export const $: mglossary.T.Glossary<string> = {
         //     annotation: PAnnotation,
         //     severity: DiagnosticSeverity,
         // }
+        "CreateUnmarshallerData": type(group({
+            "schema": member(reference("schema", "root")),
+        }))
 
 
     }),
     'interfaces': d({
     }),
     'functions': d({
-        "CreateUnmarshallErrorMessage": func(typeReference("UnmarshallErrorType"), null, null, data(typeReference("common", "String"), false))
+        "CreateUnmarshaller": func(typeReference("CreateUnmarshallerData"), null, null, inf(parametrizedInterfaceReference("h", { "Annotation": typeReference("Annotation") }, "RequiredValueHandler"))),
+        "CreateUnmarshallErrorMessage": func(typeReference("UnmarshallErrorType"), null, null, data(typeReference("common", "String"), false)),
+        "DefaultInitializeValue": func(typeReference("schema", "value"), null, parametrizedInterfaceReference("th", { "Annotation": typeReference("Annotation") }, "ValueHandler"), null),
     }),
 }

@@ -32,7 +32,9 @@ export const $: mmoduleDefinition.T.ModuleDefinition = {
                 "getKeysAsString": definitionReference("tostring", {}, "GetKeysAsString"),
                 "getNumberOfKeysAsString": definitionReference("tostring", {}, "GetNumberOfKeysAsString"),
                 "getLengthAsString": definitionReference("tostring", {}, "GetLengthAsString"),
-            }))
+            })),
+            "createUnmarshaller": algorithm(definitionReference("CreateUnmarshaller")),
+            "defaultInitializeValue": algorithm(definitionReference("DefaultInitializeValue")),
         })
     },
 }

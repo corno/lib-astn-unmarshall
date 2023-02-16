@@ -1,15 +1,16 @@
-import * as tth from "api-astn-typedhandlers"
+import * as mth from "glo-astn-typedhandlers"
+import * as mschema from "glo-astn-schema"
 
-import * as h from "api-astn-handlers"
+import * as mh from "glo-astn-handlers"
 
 export type MixidIn<PAnnotation> = {
    readonly "pushGroup": (
-        definition: tth.GroupDefinition,
-        groupContainerHandler: tth.ITypedValueHandler<PAnnotation>
-    ) => h.IValueHandler<PAnnotation>
+        definition: mschema.T.group,
+        groupContainerHandler: mth.IValueHandler<PAnnotation>
+    ) => mh.IValueHandler<PAnnotation>
     pushTaggedUnion: (
-        definition: tth.OptionDefinition,
-        taggedUnionHandler: tth.ITypedTaggedUnionHandler<PAnnotation>,
-        optionHandler: tth.ITypedValueHandler<PAnnotation>,
+        definition: mschema.T.options,
+        taggedUnionHandler: mth.ITaggedUnionHandler<PAnnotation>,
+        optionHandler: mth.IValueHandler<PAnnotation>,
     ) => void
 }

@@ -1,8 +1,22 @@
 import * as pt from 'pareto-core-types'
 
 import * as mcommon from "glo-pareto-common"
+import * as mh from "glo-astn-handlers"
+import * as mschema from "glo-astn-schema"
+import * as mth from "glo-astn-typedhandlers"
 
 export namespace T {
+    
+    export type Annotation<GPAnnotation> = GPAnnotation
+    
+    export namespace CreateUnmarshallerData {
+        
+        export type schema<GPAnnotation> = mschema.T.root
+    }
+    
+    export type CreateUnmarshallerData<GPAnnotation> = {
+        readonly 'schema': mschema.T.root
+    }
     
     export namespace DiagnosticSeverity {
         

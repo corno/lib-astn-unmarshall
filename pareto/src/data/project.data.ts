@@ -14,7 +14,8 @@ export const $: mproject.T.Project = {
     'dependencies': d({
         "res-pareto-tostring": {},
         "glo-astn-handlers": {},
-        //"glo-astn-typedhandlers": {},
+        "glo-astn-schema": {},
+        "glo-astn-typedhandlers": {},
     }),
     'type': ['library', {
         'main': {

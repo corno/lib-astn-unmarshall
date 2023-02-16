@@ -11,6 +11,12 @@ export type CcreateErrorMessage = ($d: {
     readonly 'getNumberOfKeysAsString': mtostring.FGetNumberOfKeysAsString
 }) => glo.FCreateUnmarshallErrorMessage
 
+export type CcreateUnmarshaller = glo.FCreateUnmarshaller
+
+export type CdefaultInitializeValue = glo.FDefaultInitializeValue
+
 export type API = {
     createErrorMessage: CcreateErrorMessage
+    createUnmarshaller: CcreateUnmarshaller
+    defaultInitializeValue: CdefaultInitializeValue
 }

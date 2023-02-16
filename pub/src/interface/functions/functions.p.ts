@@ -1,16 +1,17 @@
-import * as h from "glo-astn-handlers"
-import * as th from "glo-astn-typedhandlers"
+import * as mh from "glo-astn-handlers"
+import * as mth from "glo-astn-typedhandlers"
+import * as mschema from "glo-astn-schema"
 
 import { TAnnotatedUnmarshallError } from "../types/UnmarshallError.p"
 
 export type CreateUnmarshaller = <PAnnotation> (
     $: {
-        schema: th.Schema
+        schema: mschema.T.root
     },
     $i: {
         onError: (
             $: TAnnotatedUnmarshallError<PAnnotation>
         ) => void,
-        handler: th.ITypedValueHandler<PAnnotation>
+        handler: mth.IValueHandler<PAnnotation>
     },
-) => h.IRequiredValueHandler<PAnnotation>
+) => mh.IRequiredValueHandler<PAnnotation>

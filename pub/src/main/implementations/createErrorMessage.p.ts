@@ -9,7 +9,6 @@ export const $$: api.CcreateErrorMessage = ($d) => {
             case 'missing elements':
                 return pl.cc($[1], ($) => {
                     return `missing elements: ${$d.getArrayAsString($.elements)}`
-
                 })
             case 'object is not a dictionary': {
                 return `object is not a dictionary: { }`

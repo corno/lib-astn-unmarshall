@@ -83,9 +83,15 @@ export const $: mglossary.T.Glossary<string> = {
 
     }),
     'interfaces': d({
+        "UnmarshallHandler": ['group', {
+            'members': d({
+                "handler": ['reference', parametrizedInterfaceReference("th", { "Annotation": typeReference("Annotation") }, "ValueHandler")],
+                "onError": method(typeReference("UnmarshallError")),
+            }),
+        }]
     }),
     'functions': d({
-        "CreateUnmarshaller": func(typeReference("CreateUnmarshallerData"), null, null, inf(parametrizedInterfaceReference("h", { "Annotation": typeReference("Annotation") }, "RequiredValueHandler"))),
+        "CreateUnmarshaller": func(typeReference("CreateUnmarshallerData"), null, interfaceReference("UnmarshallHandler"), inf(parametrizedInterfaceReference("h", { "Annotation": typeReference("Annotation") }, "RequiredValueHandler"))),
         "CreateUnmarshallErrorMessage": func(typeReference("UnmarshallErrorType"), null, null, data(typeReference("common", "String"), false)),
         "DefaultInitializeValue": func(typeReference("schema", "value"), null, parametrizedInterfaceReference("th", { "Annotation": typeReference("Annotation") }, "ValueHandler"), null),
     }),

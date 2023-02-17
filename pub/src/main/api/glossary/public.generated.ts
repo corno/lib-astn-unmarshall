@@ -7,7 +7,12 @@ import * as mh from "glo-astn-handlers"
 import * as mschema from "glo-astn-schema"
 import * as mth from "glo-astn-typedhandlers"
 
-export type FCreateUnmarshaller = <GPAnnotation>($: T.CreateUnmarshallerData<GPAnnotation>,) => mh.IRequiredValueHandler<T.Annotation<GPAnnotation>>
+export type IUnmarshallHandler<GPAnnotation> = {
+    'handler': mth.IValueHandler<T.Annotation<GPAnnotation>>
+    'onError': ($: T.UnmarshallError<GPAnnotation>, ) => void
+}
+
+export type FCreateUnmarshaller = <GPAnnotation>($: T.CreateUnmarshallerData<GPAnnotation>, $i: IUnmarshallHandler<GPAnnotation>,) => mh.IRequiredValueHandler<T.Annotation<GPAnnotation>>
 
 export type FCreateUnmarshallErrorMessage = <GPAnnotation>($: T.UnmarshallErrorType<GPAnnotation>,) => mcommon.T.String
 

@@ -1,4 +1,4 @@
-import * as pr from 'pareto-core-raw'
+import * as pd from 'pareto-core-data'
 
 import {
     null_,
@@ -17,7 +17,7 @@ import * as mmoduleDefinition from "lib-pareto-typescript-project/dist/submodule
 
 import { $ as glossary } from "./glossary.data"
 
-const d = pr.wrapRawDictionary
+const d = pd.wrapRawDictionary
 
 export const $: mmoduleDefinition.T.ModuleDefinition = {
     'glossary': glossary,
@@ -25,6 +25,7 @@ export const $: mmoduleDefinition.T.ModuleDefinition = {
         'imports': d({
             //"common": "glo-pareto-common",
             "tostring": "res-pareto-tostring",
+            "string": "res-pareto-string",
         }),
         'algorithms': d({
             "createErrorMessage": algorithm(definitionReference("CreateUnmarshallErrorMessage"), constructor(null, {
@@ -33,7 +34,10 @@ export const $: mmoduleDefinition.T.ModuleDefinition = {
                 "getNumberOfKeysAsString": definitionReference("tostring", {}, "GetNumberOfKeysAsString"),
                 "getLengthAsString": definitionReference("tostring", {}, "GetLengthAsString"),
             })),
-            "createUnmarshaller": algorithm(definitionReference("CreateUnmarshaller")),
+            "createUnmarshaller": algorithm(definitionReference("CreateUnmarshaller"), constructor(null, {
+                "multilineStringIsEmpty": definitionReference("MultilineStringIsEmpty"),
+                "stringsAreEqual": definitionReference("StringsAreEqual"),
+            })),
             "defaultInitializeValue": algorithm(definitionReference("DefaultInitializeValue")),
         })
     },

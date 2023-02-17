@@ -2,6 +2,7 @@ import * as pt from 'pareto-core-types'
 
 import * as glo from "./glossary"
 
+import * as mstring from "res-pareto-string"
 import * as mtostring from "res-pareto-tostring"
 
 export type CcreateErrorMessage = ($d: {
@@ -11,7 +12,10 @@ export type CcreateErrorMessage = ($d: {
     readonly 'getNumberOfKeysAsString': mtostring.FGetNumberOfKeysAsString
 }) => glo.FCreateUnmarshallErrorMessage
 
-export type CcreateUnmarshaller = glo.FCreateUnmarshaller
+export type CcreateUnmarshaller = ($d: {
+    readonly 'multilineStringIsEmpty': glo.FMultilineStringIsEmpty
+    readonly 'stringsAreEqual': glo.FStringsAreEqual
+}) => glo.FCreateUnmarshaller
 
 export type CdefaultInitializeValue = glo.FDefaultInitializeValue
 

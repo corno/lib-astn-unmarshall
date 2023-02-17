@@ -17,3 +17,7 @@ export type FCreateUnmarshaller = <GPAnnotation>($: T.CreateUnmarshallerData<GPA
 export type FCreateUnmarshallErrorMessage = <GPAnnotation>($: T.UnmarshallErrorType<GPAnnotation>,) => mcommon.T.String
 
 export type FDefaultInitializeValue = <GPAnnotation>($: mschema.T.value, $i: mth.IValueHandler<T.Annotation<GPAnnotation>>,) => void
+
+export type FMultilineStringIsEmpty = <GPAnnotation>($: mh.T.MultilineString<T.Annotation<GPAnnotation>>,) => mcommon.T.Boolean
+
+export type FStringsAreEqual = <GPAnnotation>($: T.NestedStrings<GPAnnotation>,) => mcommon.T.Boolean

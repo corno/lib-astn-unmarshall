@@ -33,6 +33,13 @@ export namespace T {
         | ['error', {}]
         | ['warning', {}]
     
+    export namespace NestedStrings {
+        
+        export type N<GPAnnotation> = string
+    }
+    
+    export type NestedStrings<GPAnnotation> = pt.Nested<string>
+    
     export namespace UnmarshallError {
         
         export type annotation<GPAnnotation> = GPAnnotation

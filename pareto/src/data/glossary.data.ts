@@ -1,4 +1,4 @@
-import * as pr from 'pareto-core-raw'
+import * as pd from 'pareto-core-data'
 
 import {
     null_,
@@ -7,12 +7,12 @@ import {
     reference,
     boolean,
     typeReference,
-    dictionary, group, member, taggedUnion, types, func, data, interfaceReference, inf, method, type, glossaryParameter, parametrizedInterfaceReference
+    dictionary, group, member, taggedUnion, types, func, data, interfaceReference, inf, method, type, glossaryParameter, parametrizedInterfaceReference, parametrizedTypeReference, nested
 } from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands.p"
 
 import * as mglossary from "lib-pareto-typescript-project/dist/submodules/glossary"
 
-const d = pr.wrapRawDictionary
+const d = pd.wrapRawDictionary
 
 export const $: mglossary.T.Glossary<string> = {
     'imports': d({
@@ -78,8 +78,8 @@ export const $: mglossary.T.Glossary<string> = {
         // }
         "CreateUnmarshallerData": type(group({
             "schema": member(reference("schema", "root")),
-        }))
-
+        })),
+        "NestedStrings": type(nested(string()))
 
     }),
     'interfaces': d({
@@ -91,6 +91,8 @@ export const $: mglossary.T.Glossary<string> = {
         }]
     }),
     'functions': d({
+        "MultilineStringIsEmpty": func(parametrizedTypeReference("h", { "Annotation": typeReference("Annotation") }, "MultilineString"), null, null, data(typeReference("common", "Boolean"), false)),
+        "StringsAreEqual": func(typeReference("NestedStrings"), null, null, data(typeReference("common", "Boolean"), false)),
         "CreateUnmarshaller": func(typeReference("CreateUnmarshallerData"), null, interfaceReference("UnmarshallHandler"), inf(parametrizedInterfaceReference("h", { "Annotation": typeReference("Annotation") }, "RequiredValueHandler"))),
         "CreateUnmarshallErrorMessage": func(typeReference("UnmarshallErrorType"), null, null, data(typeReference("common", "String"), false)),
         "DefaultInitializeValue": func(typeReference("schema", "value"), null, parametrizedInterfaceReference("th", { "Annotation": typeReference("Annotation") }, "ValueHandler"), null),

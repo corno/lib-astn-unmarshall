@@ -218,7 +218,7 @@ export const $$: api.CcreateUnmarshaller = ($d) => {
                                 )
                             },
                             'object': ($) => {
-                                const foundKeysBuilder = pc.createArrayBuilder<string>()
+                                const foundKeysBuilder = pc.createArrayBuilderFIXME<string>()
                                 if ($.token.type[0] !== 'dictionary') {
                                     onError({
                                         'annotation': $.annotation,

@@ -9,7 +9,7 @@ import { $ as api } from "./api.data"
 export const $: mproject.T.Project<pd.SourceLocation> = {
     'author': "Corno",
     'description': "unmarshall an ASTN Document (string) into a *typed* dataset",
-    'license': "ISC",
+    'license': "TBD",
 
     'dependencies': d({
         "res-pareto-string": {},
@@ -21,6 +21,7 @@ export const $: mproject.T.Project<pd.SourceLocation> = {
     'type': ['library', {
         'main': {
             'definition': api,
+            'implementation': ['manual', {}],
         },
         'submodules': d({
         }),

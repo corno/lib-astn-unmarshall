@@ -15,14 +15,8 @@ import * as mglossary from "lib-pareto-typescript-project/dist/submodules/glossa
 const d = pd.d
 
 export const $: mglossary.T.Glossary<string> = {
-    'imports': d({
-        "common": "glo-pareto-common",
-        "h": "glo-astn-handlers",
-        "th": "glo-astn-typedhandlers",
-        "schema": "glo-astn-schema",
-    }),
     'parameters': d({
-        "Annotation": {},
+        "Annotation": null,
     }),
     'types': d({
         "Annotation": type(glossaryParameter("Annotation")),

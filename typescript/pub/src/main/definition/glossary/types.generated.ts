@@ -22,16 +22,16 @@ export namespace T {
         
         export namespace error {}
         
-        export type error<GPAnnotation> = {}
+        export type error<GPAnnotation> = null
         
         export namespace warning {}
         
-        export type warning<GPAnnotation> = {}
+        export type warning<GPAnnotation> = null
     }
     
     export type DiagnosticSeverity<GPAnnotation> = 
-        | ['error', {}]
-        | ['warning', {}]
+        | ['error', null]
+        | ['warning', null]
     
     export namespace NestedStrings {
         
@@ -59,47 +59,47 @@ export namespace T {
         
         export namespace array__is__not__a__list {}
         
-        export type array__is__not__a__list<GPAnnotation> = {}
+        export type array__is__not__a__list<GPAnnotation> = null
         
         export namespace array__is__not__a__shorthand__group {}
         
-        export type array__is__not__a__shorthand__group<GPAnnotation> = {}
+        export type array__is__not__a__shorthand__group<GPAnnotation> = null
         
         export namespace duplicate__key {}
         
-        export type duplicate__key<GPAnnotation> = {}
+        export type duplicate__key<GPAnnotation> = null
         
         export namespace entry__key__does__not__have__quotes {}
         
-        export type entry__key__does__not__have__quotes<GPAnnotation> = {}
+        export type entry__key__does__not__have__quotes<GPAnnotation> = null
         
         export namespace expected__a__dictionary {}
         
-        export type expected__a__dictionary<GPAnnotation> = {}
+        export type expected__a__dictionary<GPAnnotation> = null
         
         export namespace expected__a__group {}
         
-        export type expected__a__group<GPAnnotation> = {}
+        export type expected__a__group<GPAnnotation> = null
         
         export namespace expected__a__list {}
         
-        export type expected__a__list<GPAnnotation> = {}
+        export type expected__a__list<GPAnnotation> = null
         
         export namespace expected__a__multiline__string {}
         
-        export type expected__a__multiline__string<GPAnnotation> = {}
+        export type expected__a__multiline__string<GPAnnotation> = null
         
         export namespace expected__a__quoted__string {}
         
-        export type expected__a__quoted__string<GPAnnotation> = {}
+        export type expected__a__quoted__string<GPAnnotation> = null
         
         export namespace expected__a__tagged__union {}
         
-        export type expected__a__tagged__union<GPAnnotation> = {}
+        export type expected__a__tagged__union<GPAnnotation> = null
         
         export namespace expected__an__unquoted__string {}
         
-        export type expected__an__unquoted__string<GPAnnotation> = {}
+        export type expected__an__unquoted__string<GPAnnotation> = null
         
         export namespace missing__elements {
             
@@ -117,31 +117,31 @@ export namespace T {
         
         export namespace missing__option {}
         
-        export type missing__option<GPAnnotation> = {}
+        export type missing__option<GPAnnotation> = null
         
         export namespace object__is__not__a__dictionary {}
         
-        export type object__is__not__a__dictionary<GPAnnotation> = {}
+        export type object__is__not__a__dictionary<GPAnnotation> = null
         
         export namespace object__is__not__a__verbose__group {}
         
-        export type object__is__not__a__verbose__group<GPAnnotation> = {}
+        export type object__is__not__a__verbose__group<GPAnnotation> = null
         
         export namespace property__has__default__value_cm__remove {}
         
-        export type property__has__default__value_cm__remove<GPAnnotation> = {}
+        export type property__has__default__value_cm__remove<GPAnnotation> = null
         
         export namespace property__key__does__not__have__apostrophes {}
         
-        export type property__key__does__not__have__apostrophes<GPAnnotation> = {}
+        export type property__key__does__not__have__apostrophes<GPAnnotation> = null
         
         export namespace superfluous__element {}
         
-        export type superfluous__element<GPAnnotation> = {}
+        export type superfluous__element<GPAnnotation> = null
         
         export namespace this__is__interpreted__as__an__option_cm__expected__apostrophes {}
         
-        export type this__is__interpreted__as__an__option_cm__expected__apostrophes<GPAnnotation> = {}
+        export type this__is__interpreted__as__an__option_cm__expected__apostrophes<GPAnnotation> = null
         
         export namespace unknown__option {
             
@@ -149,14 +149,14 @@ export namespace T {
                 
                 export namespace D {}
                 
-                export type D<GPAnnotation> = {}
+                export type D<GPAnnotation> = null
             }
             
-            export type known__options<GPAnnotation> = pt.Dictionary<{}>
+            export type known__options<GPAnnotation> = pt.Dictionary<null>
         }
         
         export type unknown__option<GPAnnotation> = {
-            readonly 'known options': pt.Dictionary<{}>
+            readonly 'known options': pt.Dictionary<null>
         }
         
         export namespace unknown__property {
@@ -165,63 +165,63 @@ export namespace T {
                 
                 export namespace D {}
                 
-                export type D<GPAnnotation> = {}
+                export type D<GPAnnotation> = null
             }
             
-            export type known__properties<GPAnnotation> = pt.Dictionary<{}>
+            export type known__properties<GPAnnotation> = pt.Dictionary<null>
         }
         
         export type unknown__property<GPAnnotation> = {
-            readonly 'known properties': pt.Dictionary<{}>
+            readonly 'known properties': pt.Dictionary<null>
         }
         
         export namespace value__should__have__quotes {}
         
-        export type value__should__have__quotes<GPAnnotation> = {}
+        export type value__should__have__quotes<GPAnnotation> = null
         
         export namespace value__should__have__quotes__instead__of__apostrophes {}
         
-        export type value__should__have__quotes__instead__of__apostrophes<GPAnnotation> = {}
+        export type value__should__have__quotes__instead__of__apostrophes<GPAnnotation> = null
         
         export namespace value__should__not__have__apostrophes {}
         
-        export type value__should__not__have__apostrophes<GPAnnotation> = {}
+        export type value__should__not__have__apostrophes<GPAnnotation> = null
         
         export namespace value__should__not__have__quotes {}
         
-        export type value__should__not__have__quotes<GPAnnotation> = {}
+        export type value__should__not__have__quotes<GPAnnotation> = null
     }
     
     export type UnmarshallErrorType<GPAnnotation> = 
-        | ['array is not a list', {}]
-        | ['array is not a shorthand group', {}]
-        | ['duplicate key', {}]
-        | ['entry key does not have quotes', {}]
-        | ['expected a dictionary', {}]
-        | ['expected a group', {}]
-        | ['expected a list', {}]
-        | ['expected a multiline string', {}]
-        | ['expected a quoted string', {}]
-        | ['expected a tagged union', {}]
-        | ['expected an unquoted string', {}]
+        | ['array is not a list', null]
+        | ['array is not a shorthand group', null]
+        | ['duplicate key', null]
+        | ['entry key does not have quotes', null]
+        | ['expected a dictionary', null]
+        | ['expected a group', null]
+        | ['expected a list', null]
+        | ['expected a multiline string', null]
+        | ['expected a quoted string', null]
+        | ['expected a tagged union', null]
+        | ['expected an unquoted string', null]
         | ['missing elements', {
             readonly 'elements': pt.Array<string>
         }]
-        | ['missing option', {}]
-        | ['object is not a dictionary', {}]
-        | ['object is not a verbose group', {}]
-        | ['property has default value, remove', {}]
-        | ['property key does not have apostrophes', {}]
-        | ['superfluous element', {}]
-        | ['this is interpreted as an option, expected apostrophes', {}]
+        | ['missing option', null]
+        | ['object is not a dictionary', null]
+        | ['object is not a verbose group', null]
+        | ['property has default value, remove', null]
+        | ['property key does not have apostrophes', null]
+        | ['superfluous element', null]
+        | ['this is interpreted as an option, expected apostrophes', null]
         | ['unknown option', {
-            readonly 'known options': pt.Dictionary<{}>
+            readonly 'known options': pt.Dictionary<null>
         }]
         | ['unknown property', {
-            readonly 'known properties': pt.Dictionary<{}>
+            readonly 'known properties': pt.Dictionary<null>
         }]
-        | ['value should have quotes', {}]
-        | ['value should have quotes instead of apostrophes', {}]
-        | ['value should not have apostrophes', {}]
-        | ['value should not have quotes', {}]
+        | ['value should have quotes', null]
+        | ['value should have quotes instead of apostrophes', null]
+        | ['value should not have apostrophes', null]
+        | ['value should not have quotes', null]
 }

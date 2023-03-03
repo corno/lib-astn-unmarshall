@@ -1,8 +1,7 @@
 import * as pt from 'pareto-core-types'
 
-import * as gglo from "./glossary"
-
 import * as gstring from "res-pareto-string"
+import * as gthis from "./glossary"
 import * as gtostring from "res-pareto-tostring"
 
 export type CcreateErrorMessage = ($d: {
@@ -10,14 +9,14 @@ export type CcreateErrorMessage = ($d: {
     readonly 'getKeysAsString': gtostring.FGetKeysAsString
     readonly 'getLengthAsString': gtostring.FGetLengthAsString
     readonly 'getNumberOfKeysAsString': gtostring.FGetNumberOfKeysAsString
-}) => gglo.FCreateUnmarshallErrorMessage
+}) => gthis.FCreateUnmarshallErrorMessage
 
 export type CcreateUnmarshaller = ($d: {
-    readonly 'multilineStringIsEmpty': gglo.FMultilineStringIsEmpty
-    readonly 'stringsAreEqual': gglo.FStringsAreEqual
-}) => gglo.FCreateUnmarshaller
+    readonly 'multilineStringIsEmpty': gthis.FMultilineStringIsEmpty
+    readonly 'stringsAreEqual': gthis.FStringsAreEqual
+}) => gthis.FCreateUnmarshaller
 
-export type CdefaultInitializeValue = gglo.FDefaultInitializeValue
+export type CdefaultInitializeValue = gthis.FDefaultInitializeValue
 
 export type API = {
     createErrorMessage: CcreateErrorMessage

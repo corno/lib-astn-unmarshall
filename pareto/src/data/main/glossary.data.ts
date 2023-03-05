@@ -7,7 +7,7 @@ import {
     reference,
     boolean,
     typeReference,
-    dictionary, group, member, taggedUnion, types, func, data, interfaceReference, inf, method, type, glossaryParameter, parametrizedInterfaceReference, parametrizedTypeReference, nested
+    dictionary, group, member, taggedUnion, types, func, data, interfaceReference, inf, type, glossaryParameter, parametrizedInterfaceReference, parametrizedTypeReference, nested
 } from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands"
 
 import * as mglossary from "lib-pareto-typescript-project/dist/submodules/glossary"
@@ -73,22 +73,24 @@ export const $: mglossary.T.Glossary<string> = {
         "CreateUnmarshallerData": type(group({
             "schema": member(reference("schema", "root")),
         })),
-        "NestedStrings": type(nested(string()))
+        "NestedStrings": type(nested(string())),
 
     }),
+    'builders': d({
+    }),
     'interfaces': d({
-        "UnmarshallHandler": ['group', {
-            'members': d({
-                "handler": ['reference', parametrizedInterfaceReference("th", { "Annotation": typeReference("Annotation") }, "ValueHandler")],
-                "onError": method(typeReference("UnmarshallError")),
-            }),
-        }]
+        // "UnmarshallHandler": ['group', {
+        //     'members': d({
+        //         "handler": ['reference', parametrizedInterfaceReference("th", { "Annotation": typeReference("Annotation") }, "ValueHandler")],
+        //         "onError": method(typeReference("UnmarshallError")),
+        //     }),
+        // }]
     }),
     'functions': d({
         "MultilineStringIsEmpty": func(parametrizedTypeReference("h", { "Annotation": typeReference("Annotation") }, "MultilineString"), null, null, data(typeReference("common", "Boolean"), false)),
         "StringsAreEqual": func(typeReference("NestedStrings"), null, null, data(typeReference("common", "Boolean"), false)),
-        "CreateUnmarshaller": func(typeReference("CreateUnmarshallerData"), null, interfaceReference("UnmarshallHandler"), inf(parametrizedInterfaceReference("h", { "Annotation": typeReference("Annotation") }, "RequiredValueHandler"))),
+        //"CreateUnmarshaller": func(typeReference("CreateUnmarshallerData"), null, interfaceReference("UnmarshallHandler"), inf(parametrizedInterfaceReference("h", { "Annotation": typeReference("Annotation") }, "RequiredValueHandler"))),
         "CreateUnmarshallErrorMessage": func(typeReference("UnmarshallErrorType"), null, null, data(typeReference("common", "String"), false)),
-        "DefaultInitializeValue": func(typeReference("schema", "value"), null, parametrizedInterfaceReference("th", { "Annotation": typeReference("Annotation") }, "ValueHandler"), null),
+        //"DefaultInitializeValue": func(typeReference("schema", "value"), null, parametrizedInterfaceReference("th", { "Annotation": typeReference("Annotation") }, "ValueHandler"), null),
     }),
 }

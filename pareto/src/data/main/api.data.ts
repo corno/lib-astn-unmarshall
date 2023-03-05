@@ -18,5 +18,5 @@ export const $: gapi.T.API<pd.SourceLocation> = {
             "stringsAreEqual": functionReference("this", {}, "StringsAreEqual"),
         })),
         "defaultInitializeValue": algorithm(functionReference("this", {}, "DefaultInitializeValue")),
-    })
+    }),
 }

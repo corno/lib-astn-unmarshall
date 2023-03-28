@@ -1,9 +1,9 @@
 
 import * as pl from 'pareto-core-lib'
 
-import * as api from "../api"
+import { A } from "../api.generated"
 
-export const $$: api.CcreateErrorMessage = ($d) => {
+export const $$: A.createErrorMessage = ($d) => {
     return ($) => {
         switch ($[0]) {
             case 'missing elements':

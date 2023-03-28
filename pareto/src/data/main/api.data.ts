@@ -1,22 +1,22 @@
 import * as pd from 'pareto-core-data'
 
-import { functionReference, constructor, algorithm, typeReference } from "lib-pareto-typescript-project/dist/submodules/api/shorthands"
+import { abuilder, aconstructor, algorithm, dependent, sbuilder, sfunction } from "lib-pareto-typescript-project/dist/submodules/project/shorthands"
 
-import * as gapi from "lib-pareto-typescript-project/dist/submodules/api"
+import * as g_project from "lib-pareto-typescript-project/dist/submodules/project"
 const d = pd.d
 
-export const $: gapi.T.API<pd.SourceLocation> = {
+export const $: g_project.T.ModuleDefinition.api.root<pd.SourceLocation> = {
     'algorithms': d({
-        "createErrorMessage": algorithm(functionReference("this", {}, "CreateUnmarshallErrorMessage"), constructor(null, {
-            "getArrayAsString": functionReference("tostring", {}, "GetArrayAsString"),
-            "getKeysAsString": functionReference("tostring", {}, "GetKeysAsString"),
-            "getNumberOfKeysAsString": functionReference("tostring", {}, "GetNumberOfKeysAsString"),
-            "getLengthAsString": functionReference("tostring", {}, "GetLengthAsString"),
-        })),
-        "createUnmarshaller": algorithm(functionReference("this", {}, "CreateUnmarshaller"), constructor(null, {
-            "multilineStringIsEmpty": functionReference("this", {}, "MultilineStringIsEmpty"),
-            "stringsAreEqual": functionReference("this", {}, "StringsAreEqual"),
-        })),
-        "defaultInitializeValue": algorithm(functionReference("this", {}, "DefaultInitializeValue")),
+        "createErrorMessage": algorithm(sfunction("this", {}, "CreateErrorMessage"), { "Annotation": "Annotation", "SchemaAnnotation": "SchemaAnnotation" }, dependent(null, {
+            "getArrayAsString": sfunction("tostring", {}, "GetArrayAsString"),
+            "getKeysAsString": sfunction("tostring", {}, "GetKeysAsString"),
+            "getNumberOfKeysAsString": sfunction("tostring", {}, "GetNumberOfKeysAsString"),
+            "getLengthAsString": sfunction("tostring", {}, "GetLengthAsString"),
+        }, {})),
+        "createUnmarshallerCreator": algorithm(aconstructor("this", {}, "CreateUnmarshallerCreator"), { "Annotation": "Annotation", "SchemaAnnotation": "SchemaAnnotation" }, dependent(null, {
+            "multilineStringIsEmpty": sfunction("this", { "Annotation": "GAnnotation", "SchemaAnnotation": "GSchemaAnnotation" }, "MultilineStringIsEmpty"),
+            "stringsAreEqual": sfunction("string", {}, "StringsAreEqual"),
+        }, {})),
+        "defaultInitializeValue": algorithm(abuilder("this", {}, "DefaultInitializeValue"), { "Annotation": "Annotation", "SchemaAnnotation": "SchemaAnnotation" }),
     }),
 }

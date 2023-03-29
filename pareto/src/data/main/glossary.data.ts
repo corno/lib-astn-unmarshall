@@ -1,11 +1,11 @@
 import * as pd from 'pareto-core-data'
 
 import {
-    abuilder,
-    aconstructor,
+    aExternalInterfaceReference,
+    aInterface,
     aInterfaceMethod,
     aInterfaceReference,
-    array, data, dictionary, externalTypeReference, glossaryParameter, group, imp,
+    array, constructor, data, dictionary, externalTypeReference, glossaryParameter, group, imp,
     member, nested, ref, sfunction, streamconsumer, string, taggedUnion, type, typeReference
 } from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands"
 
@@ -27,8 +27,8 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
     'root': {
         'namespaces': d({}),
         'types': d({
-            "Annotation": type(glossaryParameter("Annotation")),
-            "SchemaAnnotation": type(glossaryParameter("SchemaAnnotation")),
+            "Annotation": type(ref(glossaryParameter("Annotation"))),
+            "SchemaAnnotation": type(ref(glossaryParameter("SchemaAnnotation"))),
             "DiagnosticSeverity": type(taggedUnion({
                 "error": group({}),
                 "warning": group({}),
@@ -69,11 +69,9 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
 
             "Error": type(group({
                 "type": member(ref(typeReference("ErrorType"))),
-                "annotation": member(glossaryParameter("Annotation")),
+                "annotation": member(ref(glossaryParameter("Annotation"))),
                 "severity": member(ref(typeReference("DiagnosticSeverity"))),
             })),
-
-
             // export type UnmarshallError<PAnnotation> = {
             //     type: UnmarshallErrorType,
             //     annotation: PAnnotation,
@@ -83,7 +81,6 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
                 "schema": member(ref(externalTypeReference("schema", "Root"))),
             })),
             "NestedStrings": type(nested(string())),
-
         }),
     },
     'asynchronous': {
@@ -94,19 +91,20 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
             //         "onError": method(typeReference("UnmarshallError")),
             //     }),
             // }]
-            "CreateUnmarshaller": aInterfaceMethod(typeReference("CreateUnmarshallerData"), ['reference', aInterfaceReference("h", "RequiredValueHandler")]),
-            "ErrorHandler": streamconsumer(
+            "CreateUnmarshaller": aInterface(aInterfaceMethod(typeReference("CreateUnmarshallerData"), ['reference', aExternalInterfaceReference("h", "RequiredValueHandler")])),
+            "ErrorHandler": aInterface(streamconsumer(
                 aInterfaceMethod(typeReference("Error")),
                 aInterfaceMethod(null)
-            )
+            )),
+            "DIV": aInterface(aInterfaceMethod(externalTypeReference("schema", "value"))),
         }),
         'algorithms': d({
-            "CreateUnmarshallerCreator": aconstructor(aInterfaceReference("CreateUnmarshaller"), {
-                "handler": aInterfaceReference("th", "ValueHandler"),
+            "CreateUnmarshallerCreator": constructor(aInterfaceReference("CreateUnmarshaller"), {
+                "handler": aExternalInterfaceReference("th", "ValueHandler"),
                 "errorHandler": aInterfaceReference("ErrorHandler")
             }),
-            "DefaultInitializeValue": abuilder(externalTypeReference("schema", "value"), {
-                "handler": aInterfaceReference("th", "ValueHandler")
+            "DefaultInitializeValue": constructor(aInterfaceReference("DIV"), {
+                "handler": aExternalInterfaceReference("th", "ValueHandler")
             }),
 
         }),

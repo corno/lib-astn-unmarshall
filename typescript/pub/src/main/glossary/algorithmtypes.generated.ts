@@ -25,17 +25,21 @@ export namespace ASYNC {
         
         
         export namespace C {
-            export type CreateUnmarshallerCreator<GAnnotation, GSchemaAnnotation> = ($is: {
-                readonly 'errorHandler': ASYNC.I.ErrorHandler<GAnnotation, GSchemaAnnotation>
-                readonly 'handler': g_th.ASYNC.I.ValueHandler<T.Annotation<GAnnotation, GSchemaAnnotation>>
-            }) => ASYNC.I.CreateUnmarshaller<GAnnotation, GSchemaAnnotation>
+            export type CreateUnmarshallerCreator<GAnnotation, GSchemaAnnotation> = {
+                'construct': ($is: {
+                    readonly 'errorHandler': ASYNC.I.ErrorHandler<GAnnotation, GSchemaAnnotation>
+                    readonly 'handler': g_th.ASYNC.I.ValueHandler<T.Annotation<GAnnotation, GSchemaAnnotation>>
+                }) => ASYNC.I.CreateUnmarshaller<GAnnotation, GSchemaAnnotation>
+            }
         }
         
         
         export namespace C {
-            export type DefaultInitializeValue<GAnnotation, GSchemaAnnotation> = ($is: {
-                readonly 'handler': g_th.ASYNC.I.ValueHandler<T.Annotation<GAnnotation, GSchemaAnnotation>>
-            }) => ASYNC.I.DIV<GAnnotation, GSchemaAnnotation>
+            export type DefaultInitializeValue<GAnnotation, GSchemaAnnotation> = {
+                'construct': ($is: {
+                    readonly 'handler': g_th.ASYNC.I.ValueHandler<T.Annotation<GAnnotation, GSchemaAnnotation>>
+                }) => ASYNC.I.DIV<GAnnotation, GSchemaAnnotation>
+            }
         }
     }
 }

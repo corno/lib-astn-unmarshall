@@ -11,9 +11,9 @@ export namespace ASYNC {
     
     export namespace I {
         
-        export type CreateUnmarshaller<GAnnotation, GSchemaAnnotation> = ($: T.CreateUnmarshallerData<GAnnotation, GSchemaAnnotation>, ) => g_h.ASYNC.I.RequiredValueHandler<T.Annotation<GAnnotation, GSchemaAnnotation>>
+        export type CreateUnmarshaller<GAnnotation, GSchemaAnnotation> = ($: T.CreateUnmarshallerData<GAnnotation, GSchemaAnnotation>, ) => g_h.ASYNC.I.RequiredValueHandler
         
-        export type DIV<GAnnotation, GSchemaAnnotation> = ($: g_schema.T.value<T.SchemaAnnotation<GAnnotation, GSchemaAnnotation>>, ) => void
+        export type DIV<GAnnotation, GSchemaAnnotation> = ($: g_schema.T.value, ) => void
         
         export type ErrorHandler<GAnnotation, GSchemaAnnotation> = {
             'data': ($: T.Error<GAnnotation, GSchemaAnnotation>, ) => void
@@ -28,7 +28,7 @@ export namespace ASYNC {
             export type CreateUnmarshallerCreator<GAnnotation, GSchemaAnnotation> = {
                 'construct': ($is: {
                     readonly 'errorHandler': ASYNC.I.ErrorHandler<GAnnotation, GSchemaAnnotation>
-                    readonly 'handler': g_th.ASYNC.I.ValueHandler<T.Annotation<GAnnotation, GSchemaAnnotation>>
+                    readonly 'handler': g_th.ASYNC.I.ValueHandler
                 }) => ASYNC.I.CreateUnmarshaller<GAnnotation, GSchemaAnnotation>
             }
         }
@@ -37,7 +37,7 @@ export namespace ASYNC {
         export namespace C {
             export type DefaultInitializeValue<GAnnotation, GSchemaAnnotation> = {
                 'construct': ($is: {
-                    readonly 'handler': g_th.ASYNC.I.ValueHandler<T.Annotation<GAnnotation, GSchemaAnnotation>>
+                    readonly 'handler': g_th.ASYNC.I.ValueHandler
                 }) => ASYNC.I.DIV<GAnnotation, GSchemaAnnotation>
             }
         }
@@ -55,7 +55,7 @@ export namespace SYNC {
         
         
         export namespace F {
-            export type MultilineStringIsEmpty<GAnnotation, GSchemaAnnotation> = ($: g_h.T.MultilineString<T.Annotation<GAnnotation, GSchemaAnnotation>>) => g_common.T.Boolean
+            export type MultilineStringIsEmpty<GAnnotation, GSchemaAnnotation> = ($: g_h.T.MultilineString) => g_common.T.Boolean
         }
     }
 }

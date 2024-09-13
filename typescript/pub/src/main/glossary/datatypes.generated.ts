@@ -13,11 +13,11 @@ export namespace T {
     
     export namespace CreateUnmarshallerData {
         
-        export type schema<GAnnotation, GSchemaAnnotation> = g_schema.T.Root<T.SchemaAnnotation<GAnnotation, GSchemaAnnotation>>
+        export type schema<GAnnotation, GSchemaAnnotation> = g_schema.T.Root
     }
     
     export type CreateUnmarshallerData<GAnnotation, GSchemaAnnotation> = {
-        readonly 'schema': g_schema.T.Root<T.SchemaAnnotation<GAnnotation, GSchemaAnnotation>>
+        readonly 'schema': g_schema.T.Root
     }
     
     export namespace DiagnosticSeverity {
@@ -219,13 +219,6 @@ export namespace T {
         | ['value should have quotes instead of apostrophes', null]
         | ['value should not have apostrophes', null]
         | ['value should not have quotes', null]
-    
-    export namespace NestedStrings {
-        
-        export type N<GAnnotation, GSchemaAnnotation> = string
-    }
-    
-    export type NestedStrings<GAnnotation, GSchemaAnnotation> = pt.Nested<string>
     
     export type SchemaAnnotation<GAnnotation, GSchemaAnnotation> = GSchemaAnnotation
 }

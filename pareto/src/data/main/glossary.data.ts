@@ -6,7 +6,7 @@ import {
     aInterfaceMethod,
     aInterfaceReference,
     array, constructor, data, dictionary, externalTypeReference, glossaryParameter, group, imp,
-    member, nested, ref, sfunction, streamconsumer, string, taggedUnion, type, typeReference
+    member, ref, sfunction, streamconsumer, string, taggedUnion, type, typeReference
 } from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands"
 
 import * as g_glossary from "lib-pareto-typescript-project/dist/submodules/glossary"
@@ -14,15 +14,15 @@ import * as g_glossary from "lib-pareto-typescript-project/dist/submodules/gloss
 const d = pd.d
 
 export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
-    'parameters': d({
+    'glossary parameters': d({
         "Annotation": null,
         "SchemaAnnotation": null,
     }),
     'imports': d({
-        "common": imp({}),
-        "h": imp({ "Annotation": typeReference("Annotation") }),
-        "th": imp({ "Annotation": typeReference("Annotation") }),
-        "schema": imp({ "Annotation": typeReference("SchemaAnnotation") }),
+        "common": imp(), //FIXME imp({}),
+        "h": imp(), //FIXME imp({ "Annotation": typeReference("Annotation") }),
+        "th": imp(), //FIXME imp({ "Annotation": typeReference("Annotation") }),
+        "schema": imp(), //FIXME imp({ "Annotation": typeReference("SchemaAnnotation") }),
     }),
     'root': {
         'namespaces': d({}),
@@ -80,7 +80,7 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
             "CreateUnmarshallerData": type(group({
                 "schema": member(ref(externalTypeReference("schema", "Root"))),
             })),
-            "NestedStrings": type(nested(string())),
+            //FIXME "NestedStrings": type(nested(string())),
         }),
     },
     'asynchronous': {
